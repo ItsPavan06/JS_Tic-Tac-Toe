@@ -18,7 +18,7 @@ const winPatterns = [
 ];
 
 const resetGame = () => {
-    turn0 = true;
+    turnO = true;
     enableBoxes();
     msgContainer.classList.add("hide");
 };
@@ -27,10 +27,12 @@ boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if(turnO) {
             box.innerText = "O";
+            box.classList.add("o");
             turnO = false;
         }
         else {
             box.innerText = "X";
+            box.classList.add("x");
             turnO = true;
         }
         box.disabled = true;
@@ -49,6 +51,8 @@ const enableBoxes = () => {
     for(let box of boxes) {
         box.disabled = false;
         box.innerText = "";
+        box.classList.remove("x");
+        box.classList.remove("o");
     }
 }
 
@@ -73,4 +77,4 @@ const checkWinner=() => {
 };
 
 newGameBtn.addEventListener("click", resetGame);
-resetBtn.addEventListener("click", resetGame)
+resetBtn.addEventListener("click", resetGame);
