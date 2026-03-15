@@ -59,8 +59,13 @@ body {
     font-size: 5vim;
 }
 
-#msg-container {
-    height: 30vmin;
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 .hide {
